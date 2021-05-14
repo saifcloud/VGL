@@ -1,0 +1,77 @@
+.ourprojecthover li span {
+    color: #fff;
+}
+
+.project-info-list li a {
+    color: #ddd;
+}
+
+.project-info-list li{
+    color: #ddd;
+}
+
+.ourprojecttitle {
+    color: #fff;
+}
+
+.request-a-call-back-form-vertical-two .custom-select-categories{
+	direction: ltr;
+}
+
+.page-title-content{
+	height: 250px;
+}
+
+ol.remove_circle li:before{
+	display: none;
+}
+
+ol.remove_circle{
+	padding-left: 20px;
+    margin-top: 15px;
+}
+
+ol.remove_circle li {
+    display: list-item;
+    list-style: devanagari;
+    padding-left: 10px;
+}
+
+.footer-widget{
+	width: 100%;
+}
+
+.footer-main-area{
+	padding-bottom: 0px;
+}
+
+.header-top-area .header-top-right-part .social-links::after{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

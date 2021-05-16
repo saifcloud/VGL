@@ -13,6 +13,8 @@ use App\News;
 use App\Testimonial;
 use App\Contact;
 use App\Setting;
+use App\Category;
+use App\Callback;
 
 class HomeController extends Controller
 {
@@ -31,11 +33,25 @@ class HomeController extends Controller
      $contact_2       = Setting::where('field_key','contact_2')->first();
      $website_email   = Setting::where('field_key','website_email')->first();
 
+     $facebook = Setting::where('field_key','facebook')->first();
+     $linkdin  = Setting::where('field_key','linkdin')->first();
+     $google   = Setting::where('field_key','google')->first();
+     $twitter  = Setting::where('field_key','twitter')->first();
+
      View::share('services',$services);
      View::share('website_address',$website_address);
      View::share('contact_1',$contact_1);
      View::share('contact_2',$contact_2);
      View::share('website_email',$website_email);
+
+
+
+     View::share('facebook',$facebook);
+     View::share('linkdin',$linkdin);
+     View::share('google',$google);
+     View::share('twitter',$twitter);
+
+
     }
 
     public function index()
@@ -47,7 +63,10 @@ class HomeController extends Controller
 
         $testimonial = Testimonial::where('status',1)->where('is_deleted',0)->latest()->get();
 
-        return view('index',compact('project','brand','news','testimonial'));
+
+        $category =  Category::where('status',1)->where('is_deleted',0)->get();
+
+        return view('index',compact('project','brand','news','testimonial','category'));
     }
 
     /**
@@ -135,6 +154,26 @@ class HomeController extends Controller
     {
         //
         return view('career');
+    }
+
+
+    public function callback(Request $request){
+        
+        $request->validate([
+         'name'  =>'required',
+         'email' =>'required|email',
+         'phone' =>'required',
+         'category'=>'required'
+        ]);
+
+        $callback = new Callback;
+        $callback->name  = $request->name;
+        $callback->email = $request->email;
+        $callback->phone = $request->phone; 
+        $callback->category_id = $request->category;
+        $callback->save();
+
+        return back()->with('success','Request has been submitted successfully.');
     }
 
     

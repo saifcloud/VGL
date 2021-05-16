@@ -29,6 +29,11 @@
                     <li class="{{ isset($page_title) && $page_title=='Dashboard' ? 'active':''}}"><a href="{{ url('admin/dashboard')}}"><i class="icon-home"></i><span>Dashboard</span></a></li>
 
 
+
+                    <li class="{{ isset($page_title) && $page_title=='Callback' || $page_title=='Callback create' 
+                    || $page_title=='Callback edit' || $page_title=='Callback details' ? 'active':''}}"><a href="{{ url('admin/callback')}}"><i class="icon-list"></i><span>Callback</span></a></li>
+
+
                       <li class="{{ isset($page_title) && $page_title=='Category' || $page_title=='Category create' 
                     || $page_title=='Category edit' || $page_title=='Category details' ? 'active':''}}"><a href="{{ url('admin/category')}}"><i class="icon-list"></i><span>Category</span></a></li>
 

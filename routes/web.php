@@ -36,6 +36,7 @@ Route::get('contact',[HomeController::class,'contact']);
 Route::post('contact',[HomeController::class,'post_contact']);
 Route::get('about',[HomeController::class,'about']);
 Route::get('career',[HomeController::class,'career']);
+Route::post('callback',[HomeController::class,'callback']);
 
 
 

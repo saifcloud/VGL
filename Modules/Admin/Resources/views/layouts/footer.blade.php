@@ -45,6 +45,38 @@ CKEDITOR.replace( 'description' );
 </script>
 
 
+
+<!-- callback -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+     $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+   });
+
+
+        var table = $('.data-table-callback').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: "{{ url('admin/callback') }}",
+          columns: [
+              {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+              {data: 'name', name: 'name'},
+              {data: 'email', name: 'email'},
+              {data: 'phone', name: 'phone'},
+              {data: 'category', name: 'category'},
+              {data: 'date', name: 'date'},
+              // {data: 'action', name: 'action', orderable: false, searchable: false},
+          ]
+      });
+
+  })
+</script>
+
+
+
 <!-- service -->
 <script type="text/javascript">
 	$(document).ready(function(){

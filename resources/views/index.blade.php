@@ -11,36 +11,46 @@
 					<div class="row">
 
 						<div class="col-xl-4 col-md-12 wow fadeInLeft mrb-lg-40 animated">
+
+							@if(session()->has('success'))
+                            <div class="alert alert-success">
+                            	<p>{{ session()->get('success')}}</p>
+                            </div>
+							@endif
 							<div class="request-a-call-back-form-vertical-two">
 								<h3 class="mrt-0 mrb-30">Request a Call Back</h3>
-								<form action="#">
+								<form action="{{ url('callback')}}" method="POST">
+									@csrf
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="text" placeholder="Name" class="form-control">
+												<input type="text" placeholder="Name" class="form-control" name="name" value="{{ old('name')}}">
 											</div>
+											<p class="text-danger">{{ $errors->first('name') }}</p>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="text" placeholder="Phone" class="form-control">
+												<input type="text" placeholder="Phone" class="form-control" name="phone" value="{{ old('phone')}}">
 											</div>
+											<p class="text-danger">{{ $errors->first('phone') }}</p>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="email" placeholder="Email" class="form-control">
+												<input type="email" placeholder="Email" class="form-control" name="email" value="{{ old('email')}}">
 											</div>
+											<p class="text-danger">{{ $errors->first('email') }}</p>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<select name="categories" class="custom-select-categories" required="">
+												<select name="category" class="custom-select-categories">
 													<option value="">Select a Freight</option>
-													<option>Road Freight</option>
-													<option>Ocean Freight</option>
-													<option>Air Freight</option>
-													<option>Shipping</option>
-													<option>Supply Chain</option>
-													<option>Warehousing</option>
+													@if(count($category) > 0 )
+													@foreach($category as $row) 
+													<option value="{{ $row->id}}" {{ $row->id == old('category') ? "selected":""}}>{{ $row->category }}</option>
+													@endforeach
+													@endif
 												</select>
+												<p class="text-danger">{{ $errors->first('category') }}</p>
 											</div>
 										</div>
 										<div class="col-lg-12">
@@ -74,34 +84,38 @@
 						<div class="col-xl-4 col-md-12 wow fadeInLeft mrb-lg-40 animated">
 							<div class="request-a-call-back-form-vertical-two">
 								<h3 class="mrt-0 mrb-30">Request a Call Back</h3>
-								<form action="#">
+								<form action="{{ url('callback')}}" method="POST">
+									@csrf
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="text" placeholder="Name" class="form-control">
+												<input type="text" placeholder="Name" class="form-control" name="name" value="{{ old('name')}}">
 											</div>
+											<p class="text-danger">{{ $errors->first('name') }}</p>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="text" placeholder="Phone" class="form-control">
+												<input type="text" placeholder="Phone" class="form-control" name="phone" value="{{ old('phone')}}">
 											</div>
+											<p class="text-danger">{{ $errors->first('phone') }}</p>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="email" placeholder="Email" class="form-control">
+												<input type="email" placeholder="Email" class="form-control" name="email" value="{{ old('email')}}">
 											</div>
+											<p class="text-danger">{{ $errors->first('email') }}</p>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<select name="categories" class="custom-select-categories" required="">
+												<select name="category" class="custom-select-categories">
 													<option value="">Select a Freight</option>
-													<option>Road Freight</option>
-													<option>Ocean Freight</option>
-													<option>Air Freight</option>
-													<option>Shipping</option>
-													<option>Supply Chain</option>
-													<option>Warehousing</option>
+													@if(count($category) > 0 )
+													@foreach($category as $row) 
+													<option value="{{ $row->id}}" {{ $row->id == old('category') ? "selected":""}}>{{ $row->category }}</option>
+													@endforeach
+													@endif
 												</select>
+												 <p class="text-danger">{{ $errors->first('category') }}</p>
 											</div>
 										</div>
 										<div class="col-lg-12">
@@ -135,34 +149,38 @@
 						<div class="col-xl-4 col-md-12 wow fadeInLeft mrb-lg-40 animated">
 							<div class="request-a-call-back-form-vertical-two">
 								<h3 class="mrt-0 mrb-30">Request a Call Back</h3>
-								<form action="#">
+								<form action="{{ url('callback')}}" method="POST">
+									@csrf
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="text" placeholder="Name" class="form-control">
+												<input type="text" placeholder="Name" class="form-control" name="name" value="{{ old('name')}}">
+												 <p class="text-danger">{{ $errors->first('name') }}</p>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="text" placeholder="Phone" class="form-control">
+												<input type="text" placeholder="Phone" class="form-control" name="phone" value="{{ old('phone')}}">
+												<p class="text-danger">{{$errors->first('phone')}}</p>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<input type="email" placeholder="Email" class="form-control">
+												<input type="email" placeholder="Email" class="form-control" name="email" value="{{ old('email')}}">
+												<p class="text-danger">{{$errors->first('email')}}</p>
 											</div>
 										</div>
 										<div class="col-lg-12">
 											<div class="form-group">
-												<select name="categories" class="custom-select-categories" required="">
+												<select name="category" class="custom-select-categories">
 													<option value="">Select a Freight</option>
-													<option>Road Freight</option>
-													<option>Ocean Freight</option>
-													<option>Air Freight</option>
-													<option>Shipping</option>
-													<option>Supply Chain</option>
-													<option>Warehousing</option>
+													@if(count($category) > 0 )
+													@foreach($category as $row) 
+													<option value="{{ $row->id}}" {{ $row->id == old('category') ? "selected":""}}>{{ $row->category }}</option>
+													@endforeach
+													@endif
 												</select>
+												<p class="text-danger">{{$errors->first('category')}}</p>
 											</div>
 										</div>
 										<div class="col-lg-12">
@@ -215,7 +233,7 @@
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est amet similique ipsum reprehenderit sed.</p>
 								</div>
 								<div class="service-item-link">
-									<a class="text-uppercase text-primary-color" href="service-air-freight.html">Read More</a>
+									<a class="text-uppercase text-primary-color" href="#">Read More</a>
 								</div>
 							</div>
 						</div>
@@ -236,7 +254,7 @@
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est amet similique ipsum reprehenderit sed.</p>
 								</div>
 								<div class="service-item-link">
-									<a class="text-uppercase text-primary-color" href="service-ocean-freight.html">Read More</a>
+									<a class="text-uppercase text-primary-color" href="#">Read More</a>
 								</div>
 							</div>
 						</div>
@@ -257,7 +275,7 @@
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est amet similique ipsum reprehenderit sed.</p>
 								</div>
 								<div class="service-item-link">
-									<a class="text-uppercase text-primary-color" href="service-road-freight.html">Read More</a>
+									<a class="text-uppercase text-primary-color" href="#">Read More</a>
 								</div>
 							</div>
 						</div>
@@ -265,7 +283,7 @@
 				</div>
 				<div class="row mrt-60">
 					<div class="col-xl-12 text-center">
-						<h5>Do You Want To explore more services just <span><a href="page-all-services.html" class="text-underline text-primary-color">click here</a></span></h5>
+						<h5>Do You Want To explore more services just <span><a href="#" class="text-underline text-primary-color">click here</a></span></h5>
 					</div>
 				</div>
 			</div>
@@ -380,7 +398,7 @@
 					</ul>
 					<p class="mrb-40">Distinctively exploit optimal alignments for intuitive business applications through revolutionary catalysts for chang the Seamlessly optimal optimal alignments for intuitive.</p>
 					<div class="d-inline d-md-flex align-items-center mt-40">
-						<a href="page-about.html" class="animate-btn mrr-50 mrb-sm-30">Read More</a>
+						<a href="#" class="animate-btn mrr-50 mrb-sm-30">Read More</a>
 						
 					</div>
 				</div>

@@ -64,14 +64,15 @@
                                 <i class="icon wb-plus" aria-hidden="true"></i> Add row
                             </button> -->
                             <div class="table-responsive">
-                                <table class="table table-bordered data-table-contacts">
+                                <table class="table table-bordered data-table-callback">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <!-- <th>Image</th> -->
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Message</th>
+                                                <th>Phone</th>
+                                                <th>Categroy</th>
                                                 <th>Created At</th>
                                                 <!-- <th width="100px">Action</th> -->
                                             </tr>

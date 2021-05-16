@@ -76,7 +76,7 @@
 
 
                                 <div class="row col-sm-12">
-                                    
+                                   
                                    <!--  <div class="form-group col-sm-3">
                                         <label>Logo</label>
                                         <input type="file" class="form-control" name="logo">
@@ -109,6 +109,61 @@
                                         <input type="text" class="form-control" name="contact_2" value="{{ $contact_2->field_value }}">
                                         @if($errors->has('contact_2'))
                                         <p class="text-danger">{{ $errors->first('contact_2') }}</p>
+                                        @endif
+                                    </div>
+
+                                 
+
+                                 </div>
+
+
+
+
+
+
+                                   <div class="row col-sm-12">
+                                    
+                                   <!--  <div class="form-group col-sm-3">
+                                        <label>Logo</label>
+                                        <input type="file" class="form-control" name="logo">
+                                        @if($errors->has('logo'))
+                                        <p class="text-dangtitleer">{{ $errors->first('logo') }}</p>
+                                        @endif
+                                    </div> -->
+
+                                    <div class="form-group col-sm-3">
+                                        <label>Facebook</label>
+                                        <input type="text" class="form-control" name="facebook" value="{{ $website_email->field_value }}">
+                                        @if($errors->has('facebook'))
+                                        <p class="text-danger">{{ $errors->first('facebook') }}</p>
+                                        @endif
+                                    </div>
+
+
+
+                                     <div class="form-group col-sm-3">
+                                        <label>Twitter</label>
+                                        <input type="text" class="form-control" name="twitter" value="{{ $contact_1->field_value }}">
+                                        @if($errors->has('twitter'))
+                                        <p class="text-danger">{{ $errors->first('twitter') }}</p>
+                                        @endif
+                                    </div>
+
+
+                                     <div class="form-group col-sm-3">
+                                        <label>Linkdin</label>
+                                        <input type="text" class="form-control" name="linkdin" value="{{ $contact_2->field_value }}">
+                                        @if($errors->has('linkdin'))
+                                        <p class="text-danger">{{ $errors->first('linkdin') }}</p>
+                                        @endif
+                                    </div>
+
+
+                                     <div class="form-group col-sm-3">
+                                        <label>Google+</label>
+                                        <input type="text" class="form-control" name="google" value="{{ $contact_2->field_value }}">
+                                        @if($errors->has('google'))
+                                        <p class="text-danger">{{ $errors->first('google') }}</p>
                                         @endif
                                     </div>
 

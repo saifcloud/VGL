@@ -1,6 +1,6 @@
   <!-- Footer Area Start -->
   <footer class="footer anim-object2">
-    <div class="footer-main-area" data-background="images/footer-bg.png">
+    <div class="footer-main-area" data-background="{{ url('public/images/footer-bg.png')}}">
       <div class="container">
         <div class="row">
           <div class="col-xl-4 col-lg-6 col-md-6">
@@ -19,17 +19,17 @@
                   <div class="row">
                     <div class="col-6">
                       <ul class="footer-widget-list">
-                        <li><a href="service-air-freight.html">About</a></li>
-                        <li><a href="service-ocean-freight.html">Career</a></li>
-                        <li><a href="service-road-freight.html">Contact Detail</a></li>
+                        <li><a href="{{ url('about')}}">About</a></li>
+                        <li><a href="{{ url('career')}}">Career</a></li>
+                        <!-- <li><a href="service-road-freight.html">Contact Detail</a></li> -->
                         <li><a href="{{ url('gallery')}}">Project Gallery</a></li>
                       </ul>
                     </div>
                     <div class="col-6">
                       <ul class="footer-widget-list">
                         <li><a href="{{ url('contact')}}">Contact</a></li>
-                        <li><a href="page-our-team.html">Downloads</a></li>
-                        <li><a href="page-all-services.html">Map Location</a></li>
+                      <!--   <li><a href=#>Downloads</a></li>
+                        <li><a href="#">Map Location</a></li> -->
                       </ul>
                     </div>
                   </div>
@@ -47,10 +47,10 @@
                 <div class="mrb-0"><a href="javascript:void(0)" class="text-light-gray"><i class="fas fa-envelope mrr-10"></i>{{ isset($website_email->field_value) ? $website_email->field_value:'' }}</a></div>
               </address>
               <ul class="social-list">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="{{ isset($facebook->field_value) ? $facebook->field_value:'' }}"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="{{ isset($twitter->field_value) ? $twitter->field_value:'' }}"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="{{ isset($linkdin->field_value) ? $linkdin->field_value:'' }}"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="{{ isset($google->field_value) ? $google->field_value:'' }}"><i class="fab fa-google-plus-g"></i></a></li>
               </ul>
             </div>
           </div>

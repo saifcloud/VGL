@@ -25,6 +25,22 @@ Route::group(['prefix'=>'admin','middleware' => ['admin']],function() {
 Route::get('dashboard', 'AdminController@index');
 
 
+
+//callback
+Route::get('callback','CallbackController@index');
+
+Route::get('callback/create','CallbackController@create');
+Route::post('callback/store','CallbackController@store');
+
+Route::get('callback/show/{id}','CallbackController@show');
+
+Route::get('callback/edit/{id}','CallbackController@edit');
+Route::post('callback/update','CallbackController@update');
+
+Route::get('callback/delete/{od}','CallbackController@destroy');
+
+
+
 //service
 Route::get('services','ServiceController@index');
 

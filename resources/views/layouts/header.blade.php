@@ -32,10 +32,10 @@
 						</div>
 						<div class="col-md-12 col-lg-6 header-top-right-part text-center text-lg-right text-xl-right">
 							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+								<li><a href="{{ isset($facebook->field_value) ? $facebook->field_value:'' }}"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="{{ isset($twitter->field_value) ? $twitter->field_value:'' }}"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="{{ isset($linkdin->field_value) ? $linkdin->field_value:'' }}"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="{{ isset($google->field_value) ? $google->field_value:'' }}"><i class="fab fa-google-plus-g"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -88,10 +88,10 @@
 								</div>  
 								<h4 class="mrb-15">Social List</h4>
 								<ul class="social-list">
-									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+									<li><a href="{{ isset($facebook->field_value) ? $facebook->field_value:'' }}"><i class="fab fa-facebook"></i></a></li>
+									<li><a href="{{ isset($twitter->field_value) ? $twitter->field_value:'' }}"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="{{ isset($linkdin->field_value) ? $linkdin->field_value:'' }}"><i class="fab fa-linkedin-in"></i></a></li>
+									<li><a href="{{ isset($google->field_value) ? $google->field_value:'' }}"><i class="fab fa-google-plus"></i></a></li>
 								</ul>
 							</div>
 							<div class="main-menu f-right">
